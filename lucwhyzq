@@ -1,0 +1,248 @@
+-- Interface de Auto-Aim
+local autoAimGui = Instance.new("ScreenGui")
+local mainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TeleportCastleButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local TeleportHydraButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local TeleportMansionButton = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local TeleportTempleButton = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Close = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local Minimize = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local Notification = Instance.new("TextLabel")
+
+-- Propriedades
+autoAimGui.Name = "autoAimGui"
+autoAimGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+autoAimGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+autoAimGui.ResetOnSpawn = false
+
+mainFrame.Name = "mainFrame"
+mainFrame.Parent = autoAimGui
+mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+mainFrame.Position = UDim2.new(0.4, 0, 0.3, 0)
+mainFrame.Size = UDim2.new(0, 300, 0, 250)
+mainFrame.Active = true
+mainFrame.Draggable = true
+
+UICorner.Parent = mainFrame
+
+TeleportCastleButton.Name = "TeleportCastleButton"
+TeleportCastleButton.Parent = mainFrame
+TeleportCastleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TeleportCastleButton.Position = UDim2.new(0.1, 0, 0.1, 0)
+TeleportCastleButton.Size = UDim2.new(0, 200, 0, 40)
+TeleportCastleButton.Font = Enum.Font.SourceSansBold
+TeleportCastleButton.Text = "Teleport to Castle"
+TeleportCastleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TeleportCastleButton.TextScaled = true
+TeleportCastleButton.TextSize = 14.000
+TeleportCastleButton.TextWrapped = true
+
+UICorner_2.Parent = TeleportCastleButton
+
+TeleportHydraButton.Name = "TeleportHydraButton"
+TeleportHydraButton.Parent = mainFrame
+TeleportHydraButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TeleportHydraButton.Position = UDim2.new(0.1, 0, 0.3, 0)
+TeleportHydraButton.Size = UDim2.new(0, 200, 0, 40)
+TeleportHydraButton.Font = Enum.Font.SourceSansBold
+TeleportHydraButton.Text = "Teleport to Hydra Island"
+TeleportHydraButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TeleportHydraButton.TextScaled = true
+TeleportHydraButton.TextSize = 14.000
+TeleportHydraButton.TextWrapped = true
+
+UICorner_3.Parent = TeleportHydraButton
+
+TeleportMansionButton.Name = "TeleportMansionButton"
+TeleportMansionButton.Parent = mainFrame
+TeleportMansionButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TeleportMansionButton.Position = UDim2.new(0.1, 0, 0.5, 0)
+TeleportMansionButton.Size = UDim2.new(0, 200, 0, 40)
+TeleportMansionButton.Font = Enum.Font.SourceSansBold
+TeleportMansionButton.Text = "Teleport to Mansion"
+TeleportMansionButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TeleportMansionButton.TextScaled = true
+TeleportMansionButton.TextSize = 14.000
+TeleportMansionButton.TextWrapped = true
+
+UICorner_4.Parent = TeleportMansionButton
+
+TeleportTempleButton.Name = "TeleportTempleButton"
+TeleportTempleButton.Parent = mainFrame
+TeleportTempleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TeleportTempleButton.Position = UDim2.new(0.1, 0, 0.7, 0)
+TeleportTempleButton.Size = UDim2.new(0, 200, 0, 40)
+TeleportTempleButton.Font = Enum.Font.SourceSansBold
+TeleportTempleButton.Text = "Teleport to Temple of Time"
+TeleportTempleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TeleportTempleButton.TextScaled = true
+TeleportTempleButton.TextSize = 14.000
+TeleportTempleButton.TextWrapped = true
+
+UICorner_5.Parent = TeleportTempleButton
+
+Close.Name = "Close"
+Close.Parent = mainFrame
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.Position = UDim2.new(0.90, 0, 0.05, 0)
+Close.Size = UDim2.new(0, 20, 0, 20)
+Close.Font = Enum.Font.SourceSansBold
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextScaled = true
+Close.TextSize = 14.000
+Close.TextWrapped = true
+
+UICorner_6.Parent = Close
+
+Minimize.Name = "Minimize"
+Minimize.Parent = mainFrame
+Minimize.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Minimize.Position = UDim2.new(0.80, 0, 0.05, 0)
+Minimize.Size = UDim2.new(0, 20, 0, 20)
+Minimize.Font = Enum.Font.SourceSansBold
+Minimize.Text = "-"
+Minimize.TextColor3 = Color3.fromRGB(0, 0, 0)
+Minimize.TextScaled = true
+Minimize.TextSize = 14.000
+Minimize.TextWrapped = true
+
+UICorner_7.Parent = Minimize
+
+Notification.Name = "Notification"
+Notification.Parent = autoAimGui
+Notification.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Notification.BackgroundTransparency = 0.5
+Notification.Position = UDim2.new(0.9, 0, 0.9, 0)
+Notification.Size = UDim2.new(0, 200, 0, 50)
+Notification.Font = Enum.Font.SourceSansBold
+Notification.Text = "Press Right Shift to open panel"
+Notification.TextColor3 = Color3.fromRGB(255, 255, 255)
+Notification.TextScaled = true
+Notification.TextSize = 14.000
+Notification.TextWrapped = true
+Notification.Visible = false
+
+-- Scripts
+
+local function teleportTo(position)
+    local player = game.Players.LocalPlayer
+    if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+        player.Character.HumanoidRootPart.CFrame = position
+    end
+end
+
+local function flyTo(position)
+    local player = game.Players.LocalPlayer
+    local character = player.Character
+    if character and character:FindFirstChild("HumanoidRootPart") then
+        local rootPart = character.HumanoidRootPart
+        local currentPosition = rootPart.Position
+        local distance = (position.Position - currentPosition).Magnitude
+        local duration = distance / 250 -- Ajuste a velocidade aqui, 100 é um valor de exemplo
+        local tweenService = game:GetService("TweenService")
+        local tweenInfo = TweenInfo.new(duration, Enum.EasingStyle.Linear)
+        local tween = tweenService:Create(rootPart, tweenInfo, {CFrame = position})
+        
+        -- Ativa noclip
+        local noclip = true
+        local connection
+        connection = game:GetService("RunService").Stepped:Connect(function()
+            if noclip then
+                for _, v in pairs(character:GetDescendants()) do
+                    if v:IsA("BasePart") and v.CanCollide then
+                        v.CanCollide = false
+                    end
+                end
+            else
+                connection:Disconnect()
+            end
+        end)
+
+        -- Inicia o tween
+        tween:Play()
+        tween.Completed:Connect(function()
+            -- Desativa noclip
+            noclip = false
+        end)
+    end
+end
+
+
+TeleportCastleButton.MouseButton1Click:Connect(function()
+    local castlePosition = CFrame.new(-12464, 376, -7566) -- Coordenadas reais do Castelo
+    teleportTo(castlePosition)
+end)
+
+TeleportHydraButton.MouseButton1Click:Connect(function()
+    local hydraPosition = CFrame.new(-5099, 317, -3169) -- Coordenadas reais da Ilha Hydra
+    teleportTo(hydraPosition)
+end)
+
+TeleportMansionButton.MouseButton1Click:Connect(function()
+    local mansionPosition = CFrame.new(-5090, 317, -3146) -- Coordenadas reais da Mansão
+    teleportTo(mansionPosition)
+end)
+
+TeleportTempleButton.MouseButton1Click:Connect(function()
+    local templePosition = CFrame.new(2945, 2281, -7214) -- Substitua por coordenadas reais do Templo do Tempo
+    flyTo(templePosition)
+end)
+
+Close.MouseButton1Click:Connect(function()
+    mainFrame.Visible = false
+end)
+
+Minimize.MouseButton1Click:Connect(function()
+    mainFrame.Visible = false
+    Notification.Visible = true
+end)
+
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if not gameProcessed then
+        if input.KeyCode == Enum.KeyCode.RightShift then
+            mainFrame.Visible = true
+            Notification.Visible = false
+        end
+    end
+end)
+
+-- Arrastar o painel
+local dragging
+local dragInput
+
+mainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = mainFrame.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+mainFrame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement then
+        dragInput = input
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        local delta = input.Position - dragStart
+        mainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
